@@ -1,5 +1,7 @@
 laravel new laravel-docs //cria o projeto do zero
 
+php artisan help [comando] //para explicar os comandos possiveis
+
 php artisan serve //inicia o servidor
 
 //criar o banco de dados no mysql
@@ -8,4 +10,10 @@ Schema::defaultStringLength(191);
 
 e use Illuminate\Support\Facades\Schema;
 
-php artisan migrate //irá criar o migrate no banco de dados
+php artisan migrate //irá criar o migrate no banco de dados, com as tabelas users e migrations
+
+composer dump-autoload //para caso a make:migration der algum problema
+
+php artisan make:migration create_tasks_table --create=tasks //cria o arquivo de migração, e prepara para a migração, mas ainda não realiza a alteração no banco
+
+php artisan migrate
