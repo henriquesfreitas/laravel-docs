@@ -1,1 +1,11 @@
 laravel new laravel-docs //cria o projeto do zero
+
+php artisan serve //inicia o servidor
+
+//criar o banco de dados no mysql
+//Para realizar a migration, deve-se primeiro em AppServiceProvider adicionar no método boot:
+Schema::defaultStringLength(191);
+
+e use Illuminate\Support\Facades\Schema;
+
+php artisan migrate //irá criar o migrate no banco de dados
