@@ -17,3 +17,5 @@ composer dump-autoload //para caso a make:migration der algum problema
 php artisan make:migration create_tasks_table --create=tasks //cria o arquivo de migração, e prepara para a migração, mas ainda não realiza a alteração no banco
 
 php artisan migrate
+
+php artisan migrate:refresh //rollback em todas as migrações e gera novamente
