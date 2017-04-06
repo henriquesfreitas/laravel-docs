@@ -2,6 +2,8 @@ laravel new laravel-docs //cria o projeto do zero
 
 php artisan help [comando] //para explicar os comandos possiveis
 
+php artisan tinker //para realizar testes com o projeto, sempre que alterar o código, reinicar o tinker
+
 php artisan serve //inicia o servidor
 
 //criar o banco de dados no mysql
@@ -12,10 +14,20 @@ e use Illuminate\Support\Facades\Schema;
 
 php artisan migrate //irá criar o migrate no banco de dados, com as tabelas users e migrations
 
-composer dump-autoload //para caso a make:migration der algum problema
+composer dump-autoload //limpa o cache, e otimiza novamente, para caso dê algum erro ao realizar um comando
 
 php artisan make:migration create_tasks_table --create=tasks //cria o arquivo de migração, e prepara para a migração, mas ainda não realiza a alteração no banco
 
 php artisan migrate
 
 php artisan migrate:refresh //rollback em todas as migrações e gera novamente
+
+php artisan make:model Task //irá procurar pela tabela tasks no banco, mais detalhes https://laravel.com/docs/5.4/eloquent
+
+php artisan migrate:reset //para resetar todas as modificações no banco
+
+php artisan make:model Task -m //irá criar a model e o arquivo de migration
+
+php artisan migrate
+
+//utilizar o scope: $task::incomplete()->get(); $task::incomplete()->where('id', '>=', 2)->get();
