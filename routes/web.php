@@ -1,17 +1,6 @@
 <?php
 
-use App\Task;
+Route::get('/tasks', 'TasksController@index');
 
-Route::get('/tasks', function () {
+Route::get('/tasks/{tasks}', 'TasksController@show');
 
-    $tasks = Task::all();
-
-    return view('tasks.index', compact('tasks'));
-});
-
-Route::get('/tasks/{task}', function ($id) {
-
-    $task = Task::find($id);
-
-    return view('tasks.show', compact('task'));
-});
