@@ -33,3 +33,7 @@ php artisan migrate
 //utilizar o scope: $task::incomplete()->get(); $task::incomplete()->where('id', '>=', 2)->get();
 
 php artisan make:controller TasksController //cria o controller por comando
+
+php artisan make:model Post -mc //cria o model, migration e controller tudo junto
+
+php artisan migrate
