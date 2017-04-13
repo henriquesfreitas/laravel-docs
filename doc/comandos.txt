@@ -37,3 +37,5 @@ php artisan make:controller TasksController //cria o controller por comando
 php artisan make:model Post -mc //cria o model, migration e controller tudo junto
 
 php artisan migrate
+
+php artisan make:controller Post -t //cria o controller com todos os métodos default de ação
