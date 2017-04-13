@@ -21,6 +21,8 @@
             <button type="submit" class="btn btn-primary">Publish</button>
         </form>
 
+        @include('layouts.errors')
+
     </div>
 
     @endsection
