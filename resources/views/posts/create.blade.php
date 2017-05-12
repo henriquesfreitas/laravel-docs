@@ -6,7 +6,7 @@
 
     <h1>Create a Post</h1>
 
-        <form method="post" action="/posts">
+        <form method="post" action="{{ action('PostController@store') }}">
 
             {{ csrf_field() }}
 

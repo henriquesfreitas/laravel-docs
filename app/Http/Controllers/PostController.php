@@ -7,6 +7,11 @@ use App\Post;
 
 class PostController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth')->except(['index','show']);
+    }
+
     public function index(){
 
         $posts = Post::latest()->get();
@@ -30,7 +35,16 @@ class PostController extends Controller
             'body' => 'required'
         ]);
 
-        Post::create(request(['title', 'body']));
+        Post::create([
+            'title' => \request('title'),
+            'body' => \request('body'),
+            'user_id' => auth()->user()->id
+        ]);
+
+//        outra maneira de salvar um registro
+//        auth()->user()->publish(
+//            new Post(\request(['title', 'body']))
+//        );
 
         return redirect('/');
 

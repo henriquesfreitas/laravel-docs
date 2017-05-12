@@ -1,4 +1,4 @@
-laravel new laravel-docs //cria o projeto do zero
+laravel new laravel-docs //cria o projeto do zero ou utilizar composer create-project --prefer-source laravel/laravel blog //instalação caso ocorra erro dando um new laravel
 
 php artisan help [comando] //para explicar os comandos possiveis
 

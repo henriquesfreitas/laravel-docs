@@ -2,36 +2,36 @@
 
 @section('content')
     <div class="col-sm-8 blog-main">
-    <div class="blog-post">
-    <h2 class="blog-post-title">
+        <div class="blog-post">
+            <h2 class="blog-post-title">
 
-       {{ $post->title }}
+                {{ $post->title }}
 
-    </h2>
-    <p class="blog-post-meta">{{ $post->created_at->toFormattedDateString() }}</p>
-    {{-- verificar lib carbon para data e hora--}}
-    {{ $post->body }}
+            </h2>
+            <p class="blog-post-meta">{{ $post->created_at->toFormattedDateString() }}</p>
+            {{-- verificar lib carbon para data e hora--}}
+            {{ $post->body }}
 
-    </div><!-- /.blog-post -->
+        </div><!-- /.blog-post -->
         <hr>
 
         <div class="comments">
 
             <ul class="list-group">
 
-            @foreach($post->comments as $comment)
-                <li class="list-group-item">
+                @foreach($post->comments as $comment)
+                    <li class="list-group-item">
 
-                    <strong>
+                        <strong>
 
-                        {{ $comment->created_at->diffForHumans() }}:
+                            {{ $comment->created_at->diffForHumans() }}:
 
-                    </strong>
+                        </strong>
 
-                    {{ $comment->body }}
+                        {{ $comment->body }}
 
-                </li>
-            @endforeach
+                    </li>
+                @endforeach
             </ul>
         </div>
 
