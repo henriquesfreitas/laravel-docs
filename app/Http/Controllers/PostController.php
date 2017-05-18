@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Post;
+use App\Repositories\PostRepository;
 
 class PostController extends Controller
 {
@@ -11,9 +12,14 @@ class PostController extends Controller
         $this->middleware('auth')->except(['index','show']);
     }
 
-    public function index(){
+    //PostRepository $postRepository realiza injeção de depedencia
+    public function index(PostRepository $postRepository){
 
-        $posts = Post::latest()->filter(\request(['month', 'year']))->get();
+//        $posts = $postRepository->all();
+
+//        $posts = Post::latest()->filter(\request(['month', 'year']))->get();
+
+        $posts = $postRepository->scopeFilter(Post::latest(), \request(['month', 'year']))->get();
 
         return view('posts.index', compact('posts'));
     }
