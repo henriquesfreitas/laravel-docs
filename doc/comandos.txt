@@ -41,3 +41,7 @@ php artisan migrate
 php artisan make:controller Post -t //cria o controller com todos os métodos default de ação
 
 npm run dev //para a node compilar os js e css que estão nos resources para o public
+
+php artisan make:mail Welcome //cria na pasta mail a classe para envio de email
+
+php artisan make:mail WelcomeAgain --markdown="emails.welcome-again" //cria na pasta mail a classe para envio de email, e a view com os componentes já estilizados
