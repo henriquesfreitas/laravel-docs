@@ -51,6 +51,8 @@ class PostController extends Controller
 //            new Post(\request(['title', 'body']))
 //        );
 
+        session()->flash('message', 'Your post has now benn publish.');
+
         return redirect('/');
 
     }
