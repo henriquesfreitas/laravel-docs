@@ -10,6 +10,17 @@
             </h2>
             <p class="blog-post-meta">{{ $post->created_at->toFormattedDateString() }}</p>
             {{-- verificar lib carbon para data e hora--}}
+
+            @if(count($post->tags))
+                <ul>
+                @foreach($post->tags as $tag)
+
+                    <li>{{ $tag->name }}</li>
+
+                @endforeach
+                </ul>
+            @endif
+
             {{ $post->body }}
 
         </div><!-- /.blog-post -->
