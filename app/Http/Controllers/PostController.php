@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Events\ThreadCreated;
 use App\Post;
 use App\Repositories\PostRepository;
 
@@ -14,6 +15,8 @@ class PostController extends Controller
 
     //PostRepository $postRepository realiza injeção de depedencia
     public function index(PostRepository $postRepository){
+
+        event(new ThreadCreated(['name' => "Some New Thread"]));
 
 //        $posts = $postRepository->all();
 
